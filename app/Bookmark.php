@@ -12,6 +12,7 @@ class Bookmark extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'title',
         'url',
     ];
