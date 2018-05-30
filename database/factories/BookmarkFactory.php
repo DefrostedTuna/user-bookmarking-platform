@@ -7,7 +7,7 @@ $factory->define(App\Bookmark::class, function (Faker $faker) {
         'user_id' => function () {
             return factory(\App\User::class)->create()->id;
         },
-        'name' => $faker->name,
+        'name' => $faker->word,
         'url' => $faker->url,
     ];
 });
