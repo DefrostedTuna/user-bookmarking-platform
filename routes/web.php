@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/bookmarks', 'BookmarkController');
+Route::get('/bookmarks/{bookmark}/delete')->name('bookmarks.delete')->uses('BookmarkController@delete');
