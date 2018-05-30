@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Bookmark;
-use Illuminate\Http\Request;
+use App\Http\Requests\CreateBookmarkFormRequest;
+use App\Http\Requests\UpdateBookmarkFormRequest;
 
 class BookmarkController extends Controller
 {
@@ -36,12 +37,12 @@ class BookmarkController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\CreateBookmarkFormRequest  $request
      * @param  \App\Bookmark  $bookmark
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Bookmark $bookmark)
+    public function store(CreateBookmarkFormRequest $request, Bookmark $bookmark)
     {
         $bookmark->fill($request->input());
 
@@ -81,16 +82,16 @@ class BookmarkController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UpdateBookmarkFormRequest  $request
      * @param  \App\Bookmark  $bookmark
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bookmark $bookmark)
+    public function update(UpdateBookmarkFormRequest $request, Bookmark $bookmark)
     {
         $bookmark->fill($request->input())->save();
 
-        return redirect()->route('bookmarks.show', $bookmark->id);
+        return redirect()->route('bookmarks.index');
     }
 
     /**

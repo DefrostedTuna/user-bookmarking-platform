@@ -6,6 +6,17 @@
         <div class="row justify-content-center">
             <div class="col-sm">
                 <h1>New Bookmark</h1>
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form action="{{ route('bookmarks.store') }}" method="POST">
                     <div class="form-group">
                         <label for="name-input">Name</label>
