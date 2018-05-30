@@ -60,20 +60,6 @@ class BookmarkController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Bookmark  $bookmark
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Bookmark $bookmark)
-    {
-        return view('bookmarks.show')->with([
-            'bookmark' => $bookmark,
-        ]);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Bookmark  $bookmark
