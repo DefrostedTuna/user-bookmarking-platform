@@ -9,6 +9,14 @@ use App\Http\Requests\UpdateBookmarkFormRequest;
 class BookmarkController extends Controller
 {
     /**
+     * BookmarkController constructor.
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Bookmark::class);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @param \App\Bookmark $bookmarks
